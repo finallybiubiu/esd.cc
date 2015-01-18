@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'main.views.index'),
+    url(r'^segmentfault/$', 'main.views.segmentfault_index'),
 )

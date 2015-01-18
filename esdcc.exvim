@@ -13,7 +13,7 @@ project_name = 'esdcc'
 -- File And Folder Filters:
 folder_filter_mode = exclude -- { include, exclude }
 folder_filter += 
-file_filter += py
+file_filter += py,html,xml,exvim
 file_ignore_pattern += 
 
 -- Building:

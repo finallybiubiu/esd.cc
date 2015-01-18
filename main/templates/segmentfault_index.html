@@ -1,0 +1,19 @@
+总数据条数：{{ count }}<br /><br />
+
+浏览量Top10<br />
+{% for view in views %}
+{{view.title}}---{{view.qid}}--{{view.view}}<br />
+{% endfor %}
+<br />
+
+收藏数Top10<br />
+{% for view in marks %}
+{{view.title}}---{{view.qid}}--{{view.mark}}<br />
+{% endfor %}
+<br />
+
+关注数Top10<br />
+{% for view in follows %}
+{{view.title}}---{{view.qid}}--{{view.follow}}<br />
+{% endfor %}
+<br />
