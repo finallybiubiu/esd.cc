@@ -2,18 +2,18 @@
 
 浏览量Top10<br />
 {% for view in views %}
-{{view.title}}---{{view.bid}}--{{view.view}}<br />
+{{view.title}}---{{view.name}}/{{view.bid}}--{{view.view}}<br />
 {% endfor %}
 <br />
 
 收藏数Top10<br />
 {% for view in marks %}
-{{view.title}}---{{view.bid}}--{{view.mark}}<br />
+{{view.title}}---{{view.name}}/{{view.bid}}--{{view.mark}}<br />
 {% endfor %}
 <br />
 
 推荐数Top10<br />
 {% for view in recommend %}
-{{view.title}}---{{view.bid}}--{{view.recommend}}<br />
+{{view.title}}---{{view.name}}/{{view.bid}}--{{view.recommend}}<br />
 {% endfor %}
 <br />
