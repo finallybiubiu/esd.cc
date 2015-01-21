@@ -15,6 +15,7 @@ class Segmentfault_Blog(models.Model):
     bid = models.BigIntegerField(max_length=16)
     title = models.CharField(max_length=1000)
     author = models.CharField(max_length=300)
+    name = models.CharField(max_length=36, blank=True)
     mark = models.IntegerField(max_length=10)
     view = models.IntegerField(max_length=10)
     recommend = models.IntegerField(max_length=10)
