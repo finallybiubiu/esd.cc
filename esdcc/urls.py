@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'main.views.index'),
     url(r'^segmentfault/$', 'main.views.segmentfault_index'),
+    url(r'^segmentfault_blog/$', 'main.views.segmentfault_blog_index'),
 )
