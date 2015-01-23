@@ -1,10 +1,13 @@
 from django.shortcuts import render_to_response
+from django.views.decorators.cache import cache_page
 from .models import Segmentfault
 from .models import Segmentfault_Blog
 
+@cache_page(30*60)
 def index(req):
     return render_to_response('index.html')
 
+@cache_page(30*60)
 def segmentfault_index(req):
     today = Segmentfault.objects.last().date
     result = {
@@ -15,6 +18,7 @@ def segmentfault_index(req):
             }
     return render_to_response('segmentfault_index.html',result)
 
+@cache_page(30*60)
 def segmentfault_blog_index(req):
     today = Segmentfault_Blog.objects.last().date
     result = {
