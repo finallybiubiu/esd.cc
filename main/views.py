@@ -12,6 +12,7 @@ def segmentfault_index(req):
     today = Segmentfault.objects.last().date
     result = {
             'count' : Segmentfault.objects.count(),
+            'today' : today,
             'views' : Segmentfault.objects.filter(date=today).order_by('-view')[0:10],
             'marks' : Segmentfault.objects.filter(date=today).order_by('-mark')[0:10],
             'follows' : Segmentfault.objects.filter(date=today).order_by('-follow')[0:10],
@@ -23,6 +24,7 @@ def segmentfault_blog_index(req):
     today = Segmentfault_Blog.objects.last().date
     result = {
             'count' : Segmentfault_Blog.objects.count(),
+            'today' : today,
             'views' : Segmentfault_Blog.objects.filter(date=today).order_by('-view')[0:10],
             'marks' : Segmentfault_Blog.objects.filter(date=today).order_by('-mark')[0:10],
             'recommend' : Segmentfault_Blog.objects.filter(date=today).order_by('-recommend')[0:10],
