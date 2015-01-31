@@ -1,21 +1,20 @@
-总数据条数：{{ count }}<br />
-数据展现日期：{{ today }}<br />
-<br />
-
-浏览量Top10<br />
+{% extends "base.html" %}
+{% block title %}Segmentfault{% endblock %}
+{% block main %}
+<h2>总数据条数</h2>
+{{ count }}
+<h2>数据展现日期</h2>
+{{ today }}
+<h2>浏览数 Top10</h2>
 {% for view in views %}
-{{view.title}}---{{view.qid}}--{{view.view}}<br />
+<li><a href="http://segmentfault.com/q/{{ view.qid }}" target="_blank">{{ view.title }} ({{ view.view }})</a></li>
 {% endfor %}
-<br />
-
-收藏数Top10<br />
+<h2>收藏数 Top10</h2>
 {% for view in marks %}
-{{view.title}}---{{view.qid}}--{{view.mark}}<br />
+<li><a href="http://segmentfault.com/q/{{ view.qid }}" target="_blank">{{ view.title }} ({{ view.mark }})</a></li>
 {% endfor %}
-<br />
-
-关注数Top10<br />
+<h2>关注数 Top10</h2>
 {% for view in follows %}
-{{view.title}}---{{view.qid}}--{{view.follow}}<br />
+<li><a href="http://segmentfault.com/q/{{ view.qid }}" target="_blank">{{ view.title }} ({{ view.follow }})</a></li>
 {% endfor %}
-<br />
+{% endblock %}
