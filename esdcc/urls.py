@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^$', 'main.views.index'),
     url(r'^segmentfault/$', 'main.views.segmentfault_index'),
     url(r'^segmentfault_blog/$', 'main.views.segmentfault_blog_index'),
+    url(r'^v2ex/$', 'main.views.v2ex_index'),
 )

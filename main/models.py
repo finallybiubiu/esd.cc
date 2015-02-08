@@ -22,3 +22,17 @@ class Segmentfault_Blog(models.Model):
     date = models.DateField(auto_now=True)
     def __unicode__(self):
         return self.title
+
+class V2EX(models.Model):
+    tid = models.IntegerField(max_length=10)
+    node = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=100)
+    date = models.CharField(max_length=50)
+    click = models.IntegerField(max_length=10)
+    mark = models.IntegerField(max_length=10)
+    thank = models.IntegerField(max_length=10)
+    comment = models.IntegerField(max_length=10, blank=True)
+    idate = models.DateField(auto_now=True)
+    def __unicode__(self):
+        return self.title
