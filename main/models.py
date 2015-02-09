@@ -26,7 +26,7 @@ class Segmentfault_Blog(models.Model):
 class V2EX(models.Model):
     tid = models.IntegerField(max_length=10)
     node = models.CharField(max_length=100)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=1000)
     author = models.CharField(max_length=100)
     date = models.CharField(max_length=50)
     click = models.IntegerField(max_length=10)
