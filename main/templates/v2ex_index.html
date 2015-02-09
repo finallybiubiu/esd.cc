@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 {% block title %}V2EX{% endblock %}
 {% block main %}
-数据采集分析中.....
+<h2>总数据条数</h2>
+{{ count }}
+<h2>数据更新日期</h2>
+{{ today }}
+<h2>点击数 Top30</h2>
+{% for each in click %}
+<li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.click }})</a></li>
+{% endfor %}
+<h2>收藏数 Top30</h2>
+{% for each in mark %}
+<li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.mark }})</a></li>
+{% endfor %}
+<h2>感谢数 Top30</h2>
+{% for each in thank %}
+<li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.thank }})</a></li>
+{% endfor %}
 {% endblock %}

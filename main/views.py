@@ -32,7 +32,6 @@ def segmentfault_blog_index(req):
             }
     return render_to_response('segmentfault_blog_index.html',result)
 
-'''
 @cache_page(30*60)
 def v2ex_index(req):
     today = V2EX.objects.last().idate
@@ -46,7 +45,3 @@ def v2ex_index(req):
             #'comment' : data.order_by('-comment')[0:30],
             }
     return render_to_response('v2ex_index.html', result)
-'''
-
-def v2ex_index(req):
-    return render_to_response('v2ex_index.html', )
