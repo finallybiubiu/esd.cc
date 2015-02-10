@@ -11,4 +11,7 @@ urlpatterns = patterns('',
     url(r'^segmentfault/$', 'main.views.segmentfault_index'),
     url(r'^segmentfault_blog/$', 'main.views.segmentfault_blog_index'),
     url(r'^v2ex/$', 'main.views.v2ex_index'),
+    url(r'^v2ex/click/$', 'main.views.v2ex_click'),
+    url(r'^v2ex/mark/$', 'main.views.v2ex_mark'),
+    url(r'^v2ex/thank/$', 'main.views.v2ex_thank'),
 )

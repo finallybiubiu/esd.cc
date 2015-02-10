@@ -9,12 +9,15 @@
 {% for each in click %}
 <li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.click }})</a></li>
 {% endfor %}
+<li><a href="https://esd.cc/v2ex/click/">>> 更多</a></li>
 <h2>收藏数 Top10</h2>
 {% for each in mark %}
 <li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.mark }})</a></li>
 {% endfor %}
+<li><a href="https://esd.cc/v2ex/mark">>> 更多</a></li>
 <h2>感谢数 Top10</h2>
 {% for each in thank %}
 <li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.thank }})</a></li>
 {% endfor %}
+<li><a href="https://esd.cc/v2ex/thank">>> 更多</a></li>
 {% endblock %}

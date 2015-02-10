@@ -45,3 +45,24 @@ def v2ex_index(req):
             #'comment' : data.order_by('-comment')[0:30],
             }
     return render_to_response('v2ex_index.html', result)
+
+#@cache_page(30*60)
+def v2ex_click(req):
+    today = V2EX.objects.last().idate
+    return render_to_response('v2ex_click.html', {
+        'data' : V2EX.objects.filter(idate=today).order_by('-click')[0:200],
+        })
+
+#@cache_page(30*60)
+def v2ex_mark(req):
+    today = V2EX.objects.last().idate
+    return render_to_response('v2ex_mark.html', {
+        'data': V2EX.objects.filter(idate=today).order_by('-mark')[0:200],
+        })
+
+#@cache_page(30*60)
+def v2ex_thank(req):
+    today = V2EX.objects.last().idate
+    return render_to_response('v2ex_thank.html', {
+        'data': V2EX.objects.filter(idate=today).order_by('-thank')[0:200],
+        })

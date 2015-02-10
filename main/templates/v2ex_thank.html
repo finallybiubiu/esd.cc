@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}V2EX 感谢数 Top200{% endblock %}
+{% block main %}
+<h2>感谢数 Top200</h2>
+{% for each in data %}
+<li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.thank }})</a></li>
+{% endfor %}
+{% endblock %}
