@@ -1,5 +1,5 @@
 <uwsgi>
-    <socket>127.0.0.1:10000</socket>
+    <socket>127.0.0.1:20000</socket>
     <master>true</master>
     <uid>998</uid>
     <chdir>/var/www/esd.cc/</chdir>
