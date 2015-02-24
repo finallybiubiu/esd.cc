@@ -4,11 +4,11 @@ from .models import Segmentfault
 from .models import Segmentfault_Blog
 from .models import V2EX
 
-@cache_page(30*60)
+@cache_page(3600)
 def index(req):
     return render_to_response('index.html')
 
-@cache_page(30*60)
+@cache_page(3600)
 def segmentfault_index(req):
     today = Segmentfault.objects.last().date
     result = {
@@ -20,7 +20,7 @@ def segmentfault_index(req):
             }
     return render_to_response('segmentfault_index.html',result)
 
-@cache_page(30*60)
+@cache_page(3600)
 def segmentfault_blog_index(req):
     today = Segmentfault_Blog.objects.last().date
     result = {
@@ -32,7 +32,7 @@ def segmentfault_blog_index(req):
             }
     return render_to_response('segmentfault_blog_index.html',result)
 
-@cache_page(30*60)
+@cache_page(3600)
 def v2ex_index(req):
     today = V2EX.objects.last().idate
     data = V2EX.objects.filter(idate=today)
@@ -46,21 +46,21 @@ def v2ex_index(req):
             }
     return render_to_response('v2ex_index.html', result)
 
-#@cache_page(30*60)
+@cache_page(3600)
 def v2ex_click(req):
     today = V2EX.objects.last().idate
     return render_to_response('v2ex_click.html', {
         'data' : V2EX.objects.filter(idate=today).order_by('-click')[0:200],
         })
 
-#@cache_page(30*60)
+@cache_page(3600)
 def v2ex_mark(req):
     today = V2EX.objects.last().idate
     return render_to_response('v2ex_mark.html', {
         'data': V2EX.objects.filter(idate=today).order_by('-mark')[0:200],
         })
 
-#@cache_page(30*60)
+@cache_page(3600)
 def v2ex_thank(req):
     today = V2EX.objects.last().idate
     return render_to_response('v2ex_thank.html', {
