@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     url(r'^v2ex/click/$', 'main.views.v2ex_click'),
     url(r'^v2ex/mark/$', 'main.views.v2ex_mark'),
     url(r'^v2ex/thank/$', 'main.views.v2ex_thank'),
+    url(r'^v2ex/comment/$', 'main.views.v2ex_comment'),
 )

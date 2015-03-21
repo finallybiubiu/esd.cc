@@ -42,7 +42,7 @@ def v2ex_index(req):
             'click' : data.order_by('-click')[0:10],
             'mark' : data.order_by('-mark')[0:10],
             'thank' : data.order_by('-thank')[0:10],
-            #'comment' : data.order_by('-comment')[0:30],
+            'comment' : data.order_by('-comment')[0:10],
             }
     return render_to_response('v2ex_index.html', result)
 
@@ -65,4 +65,11 @@ def v2ex_thank(req):
     today = V2EX.objects.last().idate
     return render_to_response('v2ex_thank.html', {
         'data': V2EX.objects.filter(idate=today).order_by('-thank')[0:200],
+        })
+
+@cache_page(3600)
+def v2ex_comment(req):
+    today = V2EX.objects.last().idate
+    return render_to_response('v2ex_comment.html', {
+        'data': V2EX.objects.filter(idate=today).order_by('-comment')[0:200],
         })

@@ -20,4 +20,9 @@
 <li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }} ({{ each.thank }})</a></li>
 {% endfor %}
 <li><a href="https://esd.cc/v2ex/thank">>> 更多</a></li>
+<h2>评论数 Top10</h2>
+{% for each in comment %}
+<li><a href="https://www.v2ex.com/t/{{ each.tid }}" target="_blank">{{ each.title }}_({{ each.comment }})</a></li>
+{% endfor %}
+<lo><a href="https://esd.cc/v2ex/comment">>> 更多</a></li>
 {% endblock %}
